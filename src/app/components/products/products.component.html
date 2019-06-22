@@ -1,4 +1,4 @@
-<div class="product" *ngFor="let data of prodData, let i = index" (click)="onAddProduct(data, i)">
+<div class="product" *ngFor="let data of prodData" (click)="onAddProduct(data)">
     <img src="../../assets/images/{{data.image}}"/>
     <span class="title">{{data.name | uppercase }}</span>
     <div class="info">
