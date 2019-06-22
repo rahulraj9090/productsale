@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
 
   onAddProduct(data) {
-  	//console.log(data);
+  	console.log(data);
   	this.product.addToCart(data);
   }
 

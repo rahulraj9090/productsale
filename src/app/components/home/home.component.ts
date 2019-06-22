@@ -24,10 +24,22 @@ export class HomeComponent implements OnInit {
   		if (newdata) {
   			this.item = this.item+1;
 	  		this.amount = this.amount + +<number>newdata['price'];
-	  		
+	  		this.vat = this.vat + +<number>this.getVat(newdata['price']);
+	  		this.diss = this.diss+ +<number>this.getDiss(newdata['price']);
+	  		this.total = this.getTotal;
   		}
   	});
   }
 
-  
+  getVat(price){
+  	return (price * this.initVat / 100);
+  }
+
+  getDiss(price){
+  	return (price * this.initDiss / 100);
+  }
+
+  get getTotal(){
+  	return ((this.amount - this.diss) + +this.vat);
+  }
 }
