@@ -1,1 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*============================================
+ Reset CSS 
+ ===========================================*/
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.white{
+	background: #fff !important;
+}
+
+.p{
+	font-size: 14px;
+}
+.small{
+	font-size: 12px;
+}
+
+
+/*============================================
+ Custom CSS 
+ ===========================================*/
+*{
+	font-family: 'Lato', sans-serif;
+}
+.main-container {
+  	display: grid;
+  	grid-template-columns: 45% auto;
+  	grid-gap: 10px;
+}
+
+/* left side container */
+.row-container{  
+  	background-color: #EDF0F1;
+  	text-align: center;
+  	min-height: 97vh;
+}
+
+.header{
+	display: grid;
+	grid-template-columns: 33% auto auto 33%;
+	margin: 10px 0 10px 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.main-body{
+	min-height: 280px;
+}
+.card {
+	width: 90%;
+    background: #fff;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 7px;
+    margin: 2.3%;
+}
+
+.item-detail{
+	display: grid;
+	grid-template-columns: 45% auto;
+  	grid-gap: 0px;
+  	margin: 5px;
+}
+ul{
+	list-style: none;
+	float: left;
+	margin-left: -40px;
+}
+ul > li{
+	width: 87%;
+	float:  left;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.list-item {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #eee;
+    border: 1px solid rgba(0,0,0,.125);
+}
+/* table{
+	cellspacing: 0;
+} */
+
+.btn {
+  	width: 40%;
+  	margin: 0;
+  	padding: 10px;
+  	display: inline;
+  	margin: 10px;
+  	cursor: pointer;
+  	font-size: 18px;
+ 	text-transform: uppercase;
+}
+.btn:hover {
+  	opacity: 0.8;
+}
+.btn-cancel{
+	background: #D65745 !important;
+	color: #fff;
+	float: left;
+}
+.btn-sale{
+	background: #64C87A;
+	color: #fff;
+	float: right;
+}
+
+/* Right side */
+.products{
+	/* dispaly: flex;
+	grid-template-columns: ; */
+}
+.product{
+	margin: 10px;
+	width: 120px;
+	height: 120px;
+	background: #fff;
+	border-radius: 7px;
+	float:  left;
+}
+.product img{
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	opacity: 0.7;
+}
+.product .title{
+	position: relative;
+	top: -90px;
+	color: #000;
+	font-weight: bold;
+}
+.product:hover {
+	opacity: 1;
+	background-color: #00f;
+	cursor: pointer;
+}
+.product .info{
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	opacity: 0.7;
+	display: none;
+	position: relative;
+	top: -123px;
+	left: 0px;
+}
+.product-detail{
+	padding: 2px;
+}
+.product:hover .title{
+	display: none;
+}
+.product:hover .info{
+	background: #64C87A;
+	color: #fff;
+	opacity: 1;
+	display: block;
+}
+
