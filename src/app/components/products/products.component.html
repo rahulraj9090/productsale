@@ -1,53 +1,11 @@
-<div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
+<div class="product" *ngFor="let data of prodData, let i = index" (click)="onAddProduct(data, i)">
+    <img src="../../assets/images/{{data.image}}"/>
+    <span class="title">{{data.name | uppercase }}</span>
     <div class="info">
       <div class="product-detail">
-        <p>Chilly Hot Pizza</p>
-        <p>200.00 EUR</p>
-        <p class="small">Chilly Pizza with Extra Cheese</p>
+        <p>{{data.name | uppercase}}</p>
+        <p>{{data.price | currency: 'EUR'}}</p>
+        <p class="small">{{data.description}}</p>
       </div>
     </div>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
-    <div class="info">
-      <div class="product-detail">
-        <p>Chilly Hot Pizza</p>
-        <p>200.00 EUR</p>
-        <p class="small">Chilly Pizza with Extra Cheese</p>
-      </div>
-    </div>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/strawberries.jpeg"/>
-    <span class="title">Product 1</span>
-    <div class="info">
-      <div class="product-detail">
-        <p>Chilly Hot Pizza</p>
-        <p>200.00 EUR</p>
-        <p class="small">Chilly Pizza with Extra Cheese</p>
-      </div>
-    </div>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
-  </div>
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
-  </div>  
-  <div class="product">
-    <img src="../../assets/images/clothing.jpg"/>
-    <span class="title">Product 1</span>
   </div>
