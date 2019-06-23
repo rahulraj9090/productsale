@@ -36,7 +36,7 @@ export class ProductsComponent implements OnInit {
     if (img) {
       return '../../assets/images/'+img;
     }
-    return '../../assets/images/dummy.png';
+    return '../../assets/images/dummy.jpg';
 
   }
 
