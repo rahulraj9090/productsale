@@ -1,4 +1,4 @@
-<section class="header">
+	<section class="header">
 		<span class="heading">Products </span>
 		<span class="heading">Price </span>
 		<span class="heading">Quality </span>
@@ -6,13 +6,28 @@
 	</section>
 
 	<!-- Product body section -->
-	<section class="main-body">
+	<section class="main-body" *ngIf="products == ''">
 		<div class="card">
 			There are no products 
 		</div>
-		<!-- <div class="card">
-			There are no products 
-		</div> -->
+	</section>
+	<section class="main-body" *ngIf="products != ''">
+		<div class="addProduct" *ngFor="let p of products; let i = index">
+			<span class="prodDiv" (click)="onRemove(p,i)">
+				<i class="fa fa-times-circle red left" aria-hidden="true"></i>
+				{{p.name}} 
+			</span>
+			<span class="prodDiv">
+				{{p.price}} EUR
+			</span>
+			<span class="prodDiv">
+				<span class="decre" (click)="decre(p, i)">-</span>
+				<!-- <span class="counter" id="pcount{{i}}">1</span> -->
+				<input type="text" class="counter" name="counter" id="pcount{{i}}" value="1" style="width:15px">
+				<span class="incre"(click)="incre(p, i)">+</span>
+			</span>
+			<span class="prodDiv" id="ptotal{{i}}">{{p.price}} EUR</span>
+		</div>
 	</section>
 	
 	<!-- Product detail section -->
@@ -33,19 +48,19 @@
 		</ul>
 		<ul class="list">
 			<li class="list-item white">
-				<span class="left p">{{amount}} EUR</span>
+				<span class="left p">{{amount| number:'1.1-3'}} EUR</span>
 				<span class="right p">{{item}} item</span>
 			</li>
 			<li class="list-item white">
 				<span class="left p">{{initVat}}%</span>
-				<span class="right p">{{vat}} EUR</span>
+				<span class="right p">{{vat | number:'1.1-3'}} EUR</span>
 			</li>
 			<li class="list-item white">
 				<span class="left p">{{initDiss}}%</span>
-				<span class="right p">{{diss}} EUR</span>
+				<span class="right p">{{diss | number:'1.1-3'}} EUR</span>
 			</li>
 			<li class="list-item white">
-				<span class="left p">{{total}} EUR</span>
+				<span class="left p">{{total | number:'1.1-3'}} EUR</span>
 				<span class="right p"></span>
 			</li>
 		</ul>
@@ -53,6 +68,55 @@
 
 	<!-- Button Section -->
 	<section>
-		<div class="btn btn-cancel left">Cancel Sale</div>
-		<div class="btn btn-sale right">Process Sale</div>
+		<div class="btn btn-cancel left" (click)="onCancel()">Cancel Sale</div>
+		<div class="btn btn-sale right" (click)="onDialogOpen()">Process Sale</div>
 	</section>
+
+	<!-- Dialog Box -->
+	<dialog id="myDialog" class="model">
+	<div class="header">Receipt</div>
+	<div class="model-body">
+		<p><strong>Sale No.:</strong> 00{{saleNo}}</p>
+		<p align="left" style="margin-bottom:0px"><strong>Date: {{today | date: 'dd/MM/yyyy'}}</strong></p>
+		
+		<div class="grid-container border-bottom">
+		  <div class="grid-item"><strong>#</strong></div>
+		  <div class="grid-item"><strong>Product</strong></div>
+		  <div class="grid-item"><strong>Quantity</strong></div>  
+		  <div class="grid-item"><strong>Sub Total</strong></div>  
+		</div>	
+
+		<div *ngIf="dProduct != ''" style="overflow: auto;">
+			<div class="grid-container" *ngFor="let p of dProduct; let i = index">
+				<span class="grid-item left">1</span>
+				<span class="grid-item ">{{p.name}}</span>
+				<span class="grid-item ">{{p.quentity}}</span>
+				<span class="grid-item right">{{p.price}}</span>
+			</div>
+		</div>
+
+		<div class="grid-container border-bottom border-top">
+			<span class="grid-item left"><strong>Total items</strong></span>
+			<span class="grid-item">{{item}}</span>
+			<span class="grid-item"><strong>Total</strong></span>
+			<span class="grid-item right">{{total | number:'1.1-3'}} EUR</span>
+		</div>
+
+		<div class="grid-container border-bottom">
+			<span class="grid-item left"></span>
+			<span class="grid-item"></span>
+			<span class="grid-item"><strong>Discount</strong></span>
+			<span class="grid-item right">{{initDiss}}%</span>
+		</div>
+
+		<div class="grid-container border-bottom">
+			<span class="grid-item left"></span>
+			<span class="grid-item"></span>
+			<span class="grid-item"><strong>Vat</strong></span>
+			<span class="grid-item right">{{initVat}}%</span>
+		</div>
+	</div>
+	<div class="footer">
+		<button type="button" class="model-btn" (click)="onDialogClose()" style="margin-top:10px"> Close </button>
+	</div>
+	</dialog>

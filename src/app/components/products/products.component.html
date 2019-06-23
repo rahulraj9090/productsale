@@ -1,6 +1,6 @@
 <div class="product" *ngFor="let data of prodData" (click)="onAddProduct(data)">
-    <img src="../../assets/images/{{data.image}}"/>
-    <span class="title">{{data.name | uppercase }}</span>
+    <img [src]="getImg(data.image)">
+    <span class="title p">{{data.name | uppercase }}</span>
     <div class="info">
       <div class="product-detail">
         <p>{{data.name | uppercase}}</p>

@@ -9,6 +9,8 @@ import { ProductService } from '../../services/product.service';
 export class ProductsComponent implements OnInit {
 
   prodData:any;
+  validImage: true;
+
 
   constructor( private product:ProductService ) { }
 
@@ -28,6 +30,14 @@ export class ProductsComponent implements OnInit {
   onAddProduct(data) {
   	console.log(data);
   	this.product.addToCart(data);
+  }
+
+  getImg(img) {
+    if (img) {
+      return '../../assets/images/'+img;
+    }
+    return '../../assets/images/dummy.png';
+
   }
 
 }
