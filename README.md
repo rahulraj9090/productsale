@@ -1,27 +1,37 @@
-# Saleproduct
+#Use Cases
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+##Step 1: First of All, I am creating a design a HTML template, whois given in a PDF form
 
-## Development server
+##Step 2: Install Angular 6+ and convert HTML Design into Angular with compnent
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Step3: work with components 
+      Creating 2 components  
+##1.	Home Component : This component have all calculation & Add to Cart details
+##2.	Products Component: This is a product list component 
+	Calling these component into a Root Component [App Component] with the help of selector
+  
+##Step 4: Use JSON data as a API
+	Create a service to call the json data from Assets folder as a API
+	../../assets/pos.products.json
+  
+##Step 5: Fetch data from Service
+	Calling API data into products component with the help of subscribe method
+  
+##Step 6: Fetch data from one Component to another Component
+	I am using Behavior Subject Module to communicate sibling’s components. This is a part of RxJS library.
+  
+##Step 7: Calculation (VAT Tax & Disscount)
+	VAT_Tax = price * VAT / 100
+	Disscount = price * Disscount / 100
+	Tatal Price = (amount - Disscount) + VAT_Tax
+  
+##Step 8: Data Binding
+	Bind all data with all calculation & bind data with Increment & Decrement Quantity of items
+  
+##Step 9: Cancel Sale
+	Reset All value of choosing Items
 
-## Code scaffolding
+##Step 9: Process Sale
+	Create Popup window for Invoive
+	Fetch Data from Component with pressing Process Sale Button
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
