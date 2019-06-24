@@ -22,8 +22,8 @@
 	I am using Behavior Subject Module to communicate sibling’s components. This is a part of RxJS library.
   
 ##Step 7: Calculation (VAT Tax & Disscount)
-	VAT_Tax = price * VAT / 100
-	Disscount = price * Disscount / 100
+	VAT_Tax = price * VAT / 100  
+	Disscount = price * Disscount / 100   
 	Tatal Price = (amount - Disscount) + VAT_Tax
   
 ##Step 8: Data Binding
