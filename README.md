@@ -1,4 +1,4 @@
-#Use Cases
+																								#Use Cases
 
 ##Step 1: First of All, I am creating a design a HTML template, whois given in a PDF form
 
@@ -7,6 +7,7 @@
 ##Step3: work with components 
       Creating 2 components  
 ##1.	Home Component : This component have all calculation & Add to Cart details
+
 ##2.	Products Component: This is a product list component 
 	Calling these component into a Root Component [App Component] with the help of selector
   
